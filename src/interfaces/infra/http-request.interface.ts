@@ -6,6 +6,4 @@ interface IRequestAWS<T> {
   //adicionar os outros que forem necessários, path params, query params e etcs
 }
 
-export {
-  IRequestAWS
-}
+export { IRequestAWS };

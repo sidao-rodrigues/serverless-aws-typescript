@@ -6,15 +6,15 @@ export default {
       type: 'object',
       required: ['name', 'email'],
       properties: {
-        name: { 
+        name: {
           type: 'string',
           description: 'Nome do usuário',
-          minLength: 3
+          minLength: 3,
         },
-        email: { 
+        email: {
           type: 'string',
           description: 'Email do usuário',
-          format: 'email'
+          format: 'email',
         },
       },
     },

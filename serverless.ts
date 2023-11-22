@@ -1,6 +1,5 @@
-import type { AWS } from '@serverless/typescript';
-
 import functions from '@functions/index';
+import type { AWS } from '@serverless/typescript';
 
 const serverlessConfiguration: AWS = {
   service: 'vlr-saf-ts',

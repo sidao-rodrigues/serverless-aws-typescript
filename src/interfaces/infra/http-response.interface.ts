@@ -1,8 +1,8 @@
-import { Status, StatusCodeHttp } from "@enums/http-status.enum";
+import { Status, StatusCodeHttp } from '@enums/http-status.enum';
 
 type ResponseHeader = {
-  [header: string]: string | number | boolean 
-}
+  [header: string]: string | number | boolean;
+};
 
 interface IResponse<T> {
   status: Status;
@@ -22,8 +22,8 @@ export {
   IResponse,
   // IResponseAWS,
   IResponseBody,
-  ResponseHeader
-}
+  ResponseHeader,
+};
 
 // interface IResponseAWS { // verificar esse -- extends APIGatewayProxyResult {
 //   statusCode: number;

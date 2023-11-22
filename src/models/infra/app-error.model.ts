@@ -1,5 +1,5 @@
-import { StatusCode, getStatusMessage } from "@enums/http-status.enum";
-import { IAppError } from "@interfaces/infra/error.interface";
+import { getStatusMessage, StatusCode } from '@enums/http-status.enum';
+import { IAppError } from '@interfaces/infra/error.interface';
 
 class AppError {
   private readonly _error: IAppError;
@@ -9,10 +9,10 @@ class AppError {
       message,
       status: getStatusMessage(statusCode),
       stack,
-      statusCode
+      statusCode,
     };
   }
-  
+
   get error(): IAppError {
     return this._error;
   }
@@ -30,7 +30,6 @@ class AppError {
   get message(): string {
     return this.body.message;
   }*/
-
 }
 
 export default AppError;

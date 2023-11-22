@@ -1,4 +1,4 @@
-import { Status } from "@enums/http-status.enum";
+import { Status } from '@enums/http-status.enum';
 
 interface SchemaErrorStack {
   schema: string;
@@ -27,9 +27,4 @@ interface IAppError {
   statusCode?: number;
 }
 
-export {
-  SchemaErrorStack,
-  SchemaError,
-  ErrorData,
-  IAppError
-}
+export { ErrorData, IAppError, SchemaError, SchemaErrorStack };

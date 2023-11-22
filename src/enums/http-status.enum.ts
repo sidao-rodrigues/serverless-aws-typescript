@@ -33,16 +33,10 @@ const STATUS_MESSAGES = {
   [StatusCode.FORBIDDEN]: Status.FORBIDDEN,
   [StatusCode.NOT_FOUND]: Status.BAD_REQUEST,
   [StatusCode.ERROR]: Status.INTERAL_SERVER_ERROR,
-}
+};
 
 const getStatusMessage = (statusCode: StatusCodeHttp): Status => {
   return STATUS_MESSAGES[statusCode] ?? Status.ERROR;
-}
+};
 
-export {
-  Status,
-  StatusCode,
-  StatusCodeHttp,
-  STATUS_MESSAGES,
-  getStatusMessage,
-}
+export { getStatusMessage, Status, STATUS_MESSAGES, StatusCode, StatusCodeHttp };

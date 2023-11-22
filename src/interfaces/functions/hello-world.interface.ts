@@ -3,6 +3,4 @@ import { FromSchema } from 'json-schema-to-ts';
 
 type HelloWorldCreateReq = FromSchema<typeof createSchema.properties.body>;
 
-export {
-  HelloWorldCreateReq
-}
+export { HelloWorldCreateReq };
