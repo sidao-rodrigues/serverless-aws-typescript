@@ -7,7 +7,7 @@
       "@enums/*": ["src/enums/*"],
       "@models/*": ["src/models/*"],
       "@schemas/*": ["src/schemas/*"],
-      "@resouces/*": ["src/resouces/*"],
+      "@resources/*": ["src/resources/*"],
       "@libs/*": ["src/libs/*"]
     }
   }
