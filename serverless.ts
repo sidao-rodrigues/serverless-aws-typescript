@@ -19,7 +19,17 @@ const serverlessConfiguration: AWS = {
   },
   functions,
   custom,
-  package: { individually: true }, //, exclude: ['**/*']
+  package: {
+    patterns: ['!node_modules/**', './src/**'],
+  },
+  layers: {
+    NodeModules: {
+      path: 'layer',
+      name: '${self:provider.stage}-${self:service}-node-modules',
+      description: 'Injeta os módulos do node_modules para a pasta de dependências',
+      compatibleRuntimes: ['nodejs18.x'],
+    },
+  },
   // useDotenv: true,
   // variablesResolutionMode: '20210219',
 };

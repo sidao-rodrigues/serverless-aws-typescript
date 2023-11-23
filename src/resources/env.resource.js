@@ -4,6 +4,8 @@ const DEFAULT_ENV = {
   AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1',
   NODE_OPTIONS: '--enable-source-maps --stack-trace-limit=1000',
   PROJECT: '${self:service}-${opt:stage, self:custom.defaultStage}',
+  AWS_AUTH_PROJECT: 'project',
+  AWS_AUTH_REGION: 'us-east-1',
 };
 
 const ENVIRONMENTS = {

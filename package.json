@@ -4,7 +4,11 @@
   "description": "Serverless aws-nodejs-typescript template",
   "main": "serverless.ts",
   "scripts": {
-    "sls-offline": "serverless offline start --reloadHandler --noTimeout --noAuth",
+    "sls-offline": "set IS_OFFLINE=true && serverless offline start --reloadHandler --noTimeout --noAuth",
+    "sls-deploy:dev": "serverless deploy --stage dev",
+    "sls-deploy:qas": "serverless deploy --stage qas",
+    "sls-deploy:prod": "serverless deploy --stage prod",
+    "layer-config": "rm -rf layer && mkdir -p layer/nodejs && cp package.json ./layer/nodejs && cd ./layer/nodejs && npm install --production && rm *.json",
     "lint:fix": "eslint ./src --ext .ts,.js, --fix --ignore-path ./.gitignore --max-warnings=0",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,ts,css,md,json}\"",
     "lint": "npm run lint:format && npm run lint:fix",
