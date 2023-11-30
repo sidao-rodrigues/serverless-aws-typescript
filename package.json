@@ -8,6 +8,11 @@
     "sls-deploy:dev": "serverless deploy --stage dev",
     "sls-deploy:qas": "serverless deploy --stage qas",
     "sls-deploy:prod": "serverless deploy --stage prod",
+    "knex:create": "knex --knexfile ./src/libs/knex-database/knex-config.db.ts migrate:make",
+    "knex:dev-migrate": "knex --knexfile ./src/libs/knex-database/knex-config.db.ts migrate:latest --env dev",
+    "knex:qas-migrate": "knex --knexfile ./src/libs/knex-database/knex-config.db.ts migrate:latest --env qas",
+    "knex:prod-migrate": "knex --knexfile ./src/libs/knex-database/knex-config.db.ts migrate:latest --env prod",
+    "knex:seed": "knex --knexfile ./src/libs/knex-database/knex-config.db.ts seed:run",
     "layer-config": "rm -rf layer && mkdir -p layer/nodejs && cp package.json ./layer/nodejs && cd ./layer/nodejs && npm install --production && rm *.json",
     "lint:fix": "eslint ./src --ext .ts,.js, --fix --ignore-path ./.gitignore --max-warnings=0",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,ts,css,md,json}\"",
@@ -23,7 +28,9 @@
     "@middy/http-json-body-parser": "^3.4.0",
     "@middy/http-security-headers": "^5.0.1",
     "@middy/validator": "^5.0.1",
-    "ajv-ftl-i18n": "^0.1.1"
+    "ajv-ftl-i18n": "^0.1.1",
+    "knex": "^3.0.1",
+    "pg": "^8.11.3"
   },
   "devDependencies": {
     "@serverless/typescript": "^3.30.1",
@@ -42,6 +49,7 @@
     "serverless": "^3.36.0",
     "serverless-esbuild": "^1.23.3",
     "serverless-offline": "^13.3.0",
+    "sqlite3": "^5.1.6",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.1.3"

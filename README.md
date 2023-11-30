@@ -63,25 +63,55 @@ The project code base is mainly located within the `src` folder. This folder is 
 ```
 .
 ├── src
-│   ├── functions               # Lambda configuration and source code folder
-│   │   ├── hello
-│   │   │   ├── handler.ts      # `Hello` lambda source code
-│   │   │   ├── index.ts        # `Hello` lambda Serverless configuration
-│   │   │   ├── mock.json       # `Hello` lambda input parameter, if any, for local invocation
-│   │   │   └── schema.ts       # `Hello` lambda input event JSON-Schema
-│   │   │
-│   │   └── index.ts            # Import/export of all lambda configurations
 │   │
-│   └── libs                    # Lambda shared code
-│       └── apiGateway.ts       # API Gateway specific helpers
-│       └── handlerResolver.ts  # Sharable library for resolving lambda handlers
-│       └── lambda.ts           # Lambda middleware
+│   ├── functions                           # Lambda configuration and source code folder
+│   │   ├── hello-world
+│   │   │   ├── handler.ts                  # `Hello-World` lambda source code
+│   │   │   ├── event.ts                    # `Hello-World` lambda Serverless configuration
+│   │   │   └── schema.ts                   # `Hello-World` lambda input event JSON-Schema
+│   │   └── index.ts                        # Import/export of all lambda configurations
+│   │
+│   ├── libs                                # Lambda shared code
+│   │   ├── infra                           # infrastructure
+│   │   │   ├── api-gateway.ts              # API Gateway specific helpers and responses
+│   │   │   ├── handler-resolver.ts         # Sharable library for resolving lambda handlers
+│   │   │   └── lambda.ts                   # Lambda middleware generator
+│   │   └── middlewares                     # custom middlewares
+│   │       └── error.middlewares.ts        # error middleware generator
+│   │
+│   ├── interfaces                          # interfaces
+│   │   ├── functions                       # for all functions
+│   │   │   └── hello-world.interface.ts    # hello-world interfaces
+│   │   └── infra 
+│   │       ├── error.interface.ts          # error interfaces
+│   │       ├── http-request.interface.ts   # http request interfaces
+│   │       └── http-response.interface.ts  # http response interfaces
+│   │
+│   ├── models                              # models
+│   │   └── infra                           # infra models
+│   │       ├── app-error.model.ts          # app error model
+│   │       └── http-response.model.ts      # http response model (temporary)
+│   │
+│   ├── enums                               # enums 
+│   │   └── http-status.enum.ts             # http status enum request and response
+│   │
+│   ├── schemas                             # schemas
+│   │   └── hello-world                     # infra models
+│   │       └── create.schema.ts            # schema create for hello-world function
+│   │
+│   └── resources                           # resouces for serverless config
+│       ├── authorizer.resource.ts          # lambda authorizer config
+│       ├── custom.resource.ts              # custom resource config 
+│       ├── env.resource.ts                 # envs configs
+│       └── layer.resource.ts               # layer lambda config
 │
 ├── package.json
-├── serverless.ts               # Serverless service file
-├── tsconfig.json               # Typescript compiler configuration
-├── tsconfig.paths.json         # Typescript paths
-└── webpack.config.js           # Webpack configuration
+├── serverless.ts                           # Serverless service file
+├── .eslintrc.js                            # Eslintrc configuration
+├── .prettierrc.js                          # prettierrc configuration
+├── tsconfig.json                           # Typescript compiler configuration
+├── tsconfig.paths.json                     # Typescript paths
+└── webpack.config.js                       # Webpack configuration
 ```
 
 ### 3rd party libraries
